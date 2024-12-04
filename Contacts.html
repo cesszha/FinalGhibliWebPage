@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Information</title>
+    <style>
+        /* Basic styling */
+        body {
+            font-family: Constantia;
+            background-color: #f4f7c3;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .contact-card {
+            background-color: #fff;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 60px;
+            border-radius: 10px;
+            width: 350px;
+            text-align: center;
+            transition: transform 0.3s ease-in-out;
+            position: relative; /* Add this */
+        }
+
+        .contact-card:hover {
+            transform: scale(1.05);
+        }
+
+        /* Animation effect on hover */
+        .contact-card img {
+            width: 95px;
+            height: 80px;
+            border-radius: 50%;
+            margin: -45px auto 15px; /* Adjust margin and add negative top margin */
+            position: absolute; /* Add this */
+            left: 50%;
+            transform: translateX(-50%);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .contact-card:hover img {
+            transform: rotate(360deg);
+        }
+    </style>
+</head>
+<body>
+    <div class="contact-card">
+        <img src="contactlogo.png" alt="contact-card">
+        <h2>Ghibli Store</h2>
+        <p>Contact us:</p>
+        <p>Email: Ghibli.Store@gmail.com</p>
+        <p>Phone: (+63) 989 757 6271</p>
+        <p>Address: Scandavia Homes </p>
+    </div>
+</body>
+</html>

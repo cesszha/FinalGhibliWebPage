@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Home </title>
+    <style>
+        body {
+            font-family: 'Constantia', constantia;
+            background-color: #525151;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .image-container {
+            position: relative;
+            width: 200px;
+            margin: 20px;
+            text-align: center;
+        }
+
+        .image-container img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .image-container:hover img {
+            transform: scale(1.1);
+        }
+
+        .image-description {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 10px;
+            border-radius: 5px;
+            box-sizing: border-box;
+            opacity: 0;
+            transform: translateY(100%);
+            transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+        }
+
+        .image-container:hover .image-description {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        h2 {
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        p {
+            margin: 0;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <div class="image-container">
+        <img src="spirited.jpg" alt="Chihiro">
+        <div class="image-description">
+            <h2>Spirited Away</h2>
+            <p>Spirited Away is a coming-of-age story about a young girl who must work in a magical bathhouse to save her parents from a witch.</p>
+        </div>
+    </div>
+
+    <div class="image-container">
+        <img src="totoro.jpeg" alt="Totoro">
+        <div class="image-description">
+            <h2>My Neighbor Totoro</h2>
+            <p>Totoro, the beloved forest spirit from Studio Ghibli's My Neighbor Totoro, embodies the magic and wonder of childhood.</p>
+        </div>
+    </div>
+
+    <div class="image-container">
+        <img src="whisper.png" alt="Jiro">
+        <div class="image-description">
+            <h2>Whisper of the Heart</h2>
+            <p>
+                Whisper of the Heart is a Ghibli film about a young girl's coming-of-age and her journey to find her voice as a writer.</p>
+        </div>
+    </div>
+
+    <div class="image-container">
+        <img src="ponyo.jpg" alt="Ponyo">
+        <div class="image-description">
+            <h2>Ponyo</h2>
+            <p>Ponyo, a Studio Ghibli film about a magical fish princess who falls in love with a human boy, is a whimsical and heartwarming tale of acceptance, love, and the power of nature.</p>
+        </div>
+    </div>
+
+    <div class="image-container">
+        <img src="mononoke.jpg" alt="Princess Mononoke">
+        <div class="image-description">
+            <h2>Princess Mononoke</h2>
+            <p>
+                Studio Ghibli's Princess Mononoke is a visually stunning epic about a young prince caught in the conflict between humans and nature.</p>
+        </div>
+    </div>
+
+    <div class="image-container">
+        <img src="marnie.jpg" alt="Marnie">
+        <div class="image-description">
+            <h2>When Marnie Was There</h2>
+            <p>
+                Studio Ghibli's When Marnie Was There is a beautifully animated and heartwarming story about friendship, family, and self-discovery.</p>
+        </div>
+    </div>
+
+    <div class="image-container">
+        <img src="howl.jpg" alt="Howl's Moving Castle">
+        <div class="image-description">
+            <h2>How's Moving Castle</h2>
+            <p>
+                Howl's Moving Castle is a 2004 Japanese animated fantasy film by Studio Ghibli about a young woman who is cursed by a witch and finds refuge in a magical moving castle with a wizard and his fire demon.</p>
+        </div>
+    </div>
+
+    <div class="image-container">
+        <img src="grave.jpg" alt="Grave of the Fireflies">
+        <div class="image-description">
+            <h2>Grave of the Fireflies</h2>
+            <p>
+                Grave of the Fireflies is a Studio Ghibli war drama film about two orphaned siblings struggling to survive in Japan during the final months of World War II.</p>
+        </div>
+    </div>
+
+    <div class="image-container">
+        <img src="kiki.jpg" alt="Kiki's Delivery">
+        <div class="image-description">
+            <h2>Kiki's Delivery</h2>
+            <p>
+                Kiki's Delivery Service is a heartwarming Studio Ghibli film about a young witch who learns to be independent and finds her place in the world.</p>
+        </div>
+    </div>
+
+    <div class="image-container">
+        <img src="jiro.jpg" alt="The Wind Rises">
+        <div class="image-description">
+            <h2>The Wind Rises</h2>
+            <p>
+                The Wind Rises is a beautifully animated and thought-provoking film about the life of Jiro Horikoshi, the designer of the Mitsubishi A6M Zero fighter plane used by Japan in World War II.</p>
+        </div>
+    </div>
+
+</body>
+</html>

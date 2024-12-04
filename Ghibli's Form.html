@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <title>Ghibli's Form</title>
+
+  <style>
+
+    body {
+
+      background-image: url('https://bit.ly/46e6UHx');
+
+      background-size: cover;
+
+      background-position: center;
+
+      padding: 20px;
+
+      padding-top: 40px;
+
+      font-family: constantia;
+
+    }
+
+ 
+
+    form {
+
+      width: 500px;
+
+      margin: 0 auto;
+
+      padding: 10px;
+
+      border: 1px solid #ccc;
+
+      border-radius: 10px;
+
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+
+      background-color: rgb(247, 246, 206);
+
+    }
+
+ 
+
+    input, textarea, select {
+
+      width: 100%;
+
+      margin-bottom: 10px;
+
+      border-radius: 5px;
+
+      border: 1px solid #ccc;
+
+    }
+
+ 
+
+    label {
+
+      display: block;
+
+      margin-bottom: 5px;
+
+    }
+
+ 
+
+    button {
+
+      background-color: #636060;
+
+      color: #e1ded9;
+
+      padding: 10px 20px;
+
+      border: none;
+
+      cursor: pointer;
+
+      border-radius: 5px;
+
+    
+
+    }
+
+ 
+
+    fieldset {
+
+      border: 1px solid #ccc;
+
+      border-radius: 10px;
+
+      padding: 10px;
+
+    }
+
+ 
+
+    legend {
+
+      font-size: 1.2em;
+
+      margin-bottom: 10px;
+
+    }
+
+ 
+
+    .header {
+
+      color: #e1ded9;
+
+      background-color: #636060;
+
+      padding: 10px;
+
+      width: 400px;
+
+      text-align: center;
+
+      margin-left: 36%;
+
+      border-radius: 20%;
+
+    }
+
+ 
+
+    .checkbox {
+
+      margin-bottom: 10px;
+
+      align-items: flex-start;
+
+    }
+
+ 
+
+    .checkbox-container {
+
+      display: flex;
+
+      flex-direction: row;
+
+      align-items: center;
+
+    }
+
+ 
+
+    .radio-container {
+
+      display: block;
+
+      position: relative;
+
+      padding-left: 30px;
+
+      margin-bottom: 15px;
+
+      cursor: pointer;
+
+      color: #555;
+
+    }
+
+ 
+
+    .radio-container input {
+
+      position: absolute;
+
+      opacity: 0;
+
+    }
+
+ 
+
+    .checkmark {
+
+      position: absolute;
+
+      top: 0;
+
+      left: 0;
+
+      height: 20px;
+
+      width: 20px;
+
+      background-color: #ccc;
+
+      border-radius: 50%;
+
+    }
+
+ 
+
+    .radio-container input:checked ~ .checkmark {
+
+      background-color: #777;
+
+    }
+
+ 
+
+    .checkmark:after {
+
+      content: "";
+
+      position: absolute;
+
+      display: none;
+
+      top: 50%;
+
+      left: 50%;
+
+      transform: translate(-50%, -50%);
+
+      width: 6px;
+
+      height: 6px;
+
+      background-color: white;
+
+      border-radius: 50%;
+
+    }
+
+ 
+
+    .radio-container input:checked ~ .checkmark:after {
+
+      display: block;
+
+    }
+
+  </style>
+
+</head>
+
+<body>
+
+  <h2 class="header"><center>Kindly fill out this form moots!</center></h2>
+
+  <form action="#" method="post" onsubmit="return validateForm();">
+
+    <label for="name">Name:</label>
+
+    <input type="text" name="name" id="name" required>
+
+ 
+
+    <label class="gender">Gender:</label>
+
+    <label class="radio-container">Male
+
+      <input type="radio" name="gender" value="male" required>
+
+      <span class="checkmark"></span>
+
+    </label>
+
+    <label class="radio-container">Female
+
+      <input type="radio" name="gender" value="female" required>
+
+      <span class="checkmark"></span>
+
+    </label>
+
+ 
+
+    <label for="age">Age (7-75 years old):</label>
+
+    <input type="number" name="age" id="age" required min="7" max="75">
+
+ 
+
+    <label for="email">Email:</label>
+
+    <input type="email" name="email" id="email" required>
+
+ 
+
+    <label for="file">Upload a photo of your favorite character:</label>
+
+    <input type="file" name="file" id="file" accept="image/*" required>
+
+ 
+
+    <label for="description">Description:</label>
+
+    <textarea name="description" id="description" required></textarea>
+
+ 
+
+    <fieldset>
+
+      <legend>Pick your favorite character:</legend>
+
+      <select name="colors[]" multiple required>
+
+        <option value="Mei">Mei</option>
+
+        <option value="Totoro">Totoro</option>
+
+        <option value="Cat Bus">Cat Bus</option>
+
+        <option value="Nanny">Nanny</option>
+
+        <option value="Tatsuo">Tatsuo</option>
+
+      </select>
+
+    </fieldset>
+
+ 
+
+    <div class="checkbox-container">
+
+      <label for="i-am-a-ghibli-fan">I am a Ghibli Fan!</label>
+
+      <input type="checkbox" id="i-am-a-ghibli-fan" class="checkbox" checked>
+
+    </div>
+
+ 
+
+    <button type="submit">Submit</button>
+
+  </form>
+
+  <script>
+
+    function validateForm() {
+
+      var nameInput = document.getElementById('name');
+
+      if (nameInput.value.trim() === '') {
+
+        alert('Name is required!');
+
+        nameInput.focus();
+
+        return false;
+
+      }
+
+ 
+
+      var genderRadioButtons = document.querySelectorAll('input[type=radio][name=gender]');
+
+      var genderSelected = false;
+
+      for (var i = 0; i < genderRadioButtons.length; i++) {
+
+        if (genderRadioButtons[i].checked) {
+
+          genderSelected = true;
+
+          break;
+
+        }
+
+      }
+
+ 
+
+      if (!genderSelected) {
+
+        alert('Please select a gender.');
+
+        return false;
+
+      }
+
+ 
+
+      var ageInput = document.getElementById('age');
+
+      if (ageInput.value < 7 || ageInput.value > 75) {
+
+        alert('Age must be between 7 and 75 years old.');
+
+        ageInput.focus();
+
+        return false;
+
+      }
+
+ 
+
+      var emailInput = document.getElementById('email');
+
+      var emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+
+      if (!emailPattern.test(emailInput.value)) {
+
+        alert('Please enter a valid email address.');
+
+        emailInput.focus();
+
+        return false;
+
+      }
+
+ 
+
+      // You can add more validation here for other fields
+
+ 
+
+      // If all validations pass, you can redirect to the desired page
+
+      window.location.href = "LogIn.html";
+
+      return false; // Prevent form submission
+
+    }
+
+  </script>
+
+</body>
+
+</html>
